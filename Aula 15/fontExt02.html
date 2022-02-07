@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family: 'Sheldon';
+            src: url('fonts/Authentic Sheldon.ttf') format('truetype'), url('fonts/Authentic Sheldon.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            /*
+                Tipos de formart()
+                - opentype (otf)
+                - truetype (ttf)
+                - embedded-opentype
+                - tretype-aat (Apple Advanced Typography)
+                - svg
+            */
+        }
+
+        @font-face {
+            font-family: 'Love';
+            src: url('fonts/Filxgirl.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Love', Helvetica, sans-serif;
+            font-size: 2em;
+        }
+
+        h1, h2 {
+            font-family: 'Sheldon', Times, serif;
+            font-size: 2em;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>Título</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium adipisci sunt incidunt odit beatae? Animi dignissimos vel dicta natus at. Iure assumenda officia ut eveniet facere nobis omnis debitis error!</p>
+    <h2>Subtitulo</h2>
+</body>
+</html>
