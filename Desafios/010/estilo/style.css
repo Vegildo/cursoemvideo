@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Android';
-    src: url('/010/fontes/idroid.otf') format('opentype');
+    src: url('../fontes/idroid.otf') format('opentype');
     font-weight: normal;
 }
 
@@ -48,7 +48,7 @@ header {
 }
 
 header > h1 {
-    color: white;
+    color: ghostwhite;
     font-family: var(--fonte-destaque);
     font-size: 3em;
     margin-bottom: 18px; 
@@ -58,7 +58,7 @@ header > h1 {
 header > p {
     font-family: var(--fonte-destaque);
     font-size: 1.2em;
-    color: white;
+    color: ghostwhite;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.281);  
 }
 
@@ -92,19 +92,26 @@ main {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.432);
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;    
+    border-bottom-right-radius: 10px; 
 }
 
 main img {
     width: 100%;
 }
 
-main h1 {
+main img.pequena {
+    width: 47%;
+    display: block;
+    margin: auto;
+}
+
+/*main h1 ou article > h1*/
+article > h1 {
     color: var(--cor2);
     font-family: var(--fonte-android);
 }
-
-main h2 {
+/*main h2 ou article > h2*/
+article > h2 {
     color: var(--cor2);
     font-family: var(--fonte-android);
 }
