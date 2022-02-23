@@ -95,11 +95,44 @@ main {
     border-bottom-right-radius: 10px; 
 }
 
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.05em;
+    line-height: 1.8em;
+}
+
+main strong {    
+    color: var(--cor2);
+    font-size: 1.08em;
+    font-weight: bolder;
+    /* 
+    background-color: var(--cor2);
+    padding: 2px 4px;
+    */
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--cor2);
+    color: var(--cor5);
+    padding: 2px 4px;    
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor1);    
+}
+
 main img {
     width: 100%;
 }
 
 main img.pequena {
+    max-width: 400px;
+    /*Forma arcaica e com prob de crescer muito width: 47%;*/
     width: 47%;
     display: block;
     margin: auto;
@@ -114,6 +147,9 @@ article > h1 {
 article > h2 {
     color: var(--cor2);
     font-family: var(--fonte-android);
+    font-size: 1.3em;
+    /* background-image: linear-gradient(to right, var(--cor5), transparent);
+    text-indent: 10px; */
 }
 
 footer {
