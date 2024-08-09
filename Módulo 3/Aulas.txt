@@ -1,0 +1,413 @@
+
+
+				  Notas de aula
+==================================================================================
+
+* Maneiras de configurar o fundo do site:
+
+    No css:
+
+  1. Cor única:
+
+            background-color: skyblue;
+
+  2. Cor com efeito degradê:
+        
+            background-image: linear-gradient(to bottom, yellow, red);
+
+  3. Com imagem externa:
+
+            background-image: url(images/pattern003.png); /*A imagem se repetirá automaticamente, em seu tamanho padrão;*/
+
+  4. Definindo tamanho da imagem externa:
+
+	    background-size: 100px 100px;
+
+
+  5. Repetição de imagem externa:
+
+	    background-repeat: repeat; /*Repetição padrão*/
+	    background-repeat: repeat-x; /*repetição na horizontal*/
+	    background-repeat: repeat-y; /*repetição na vertical*/
+	    background-repeat: space; /*repetição com espaço entre as imagens*/
+	    background-repeat: round; /*Repetição arredondada*/
+	    background-repeat: no-repeat; /*Sem Repetição da imagem*/	
+ 
+  6. Posição da imagem:
+
+	    background-position: coluna linha;
+
+	Sempre vem primeiro a coluna depois a linha. Colunas podem ser left, right e center e linhas podem ser top, bottom e center. Ex:
+
+	    background-position: left top;
+ 
+  6. Tamanho da imagem:
+
+	background-size: 100% 100%; //Forma burra  de preencher uma imagem de fundo na tela toda, pois a distorce..
+	Ex:
+			/* Keyword values */
+		background-size: cover; /*Cobre 100% da imagem na tela*/
+		background-size: contain; /*Contem 100% da imagem na tela*/
+
+			/* One-value syntax */
+	/* the width of the image (height becomes 'auto') */
+		background-size: 50%;
+		background-size: 3.2em;
+		background-size: 12px;
+		background-size: auto;
+
+			/* Two-value syntax */
+	/* first value: width of the image, second value: height */
+		background-size: 50% auto;
+		background-size: 3em 25%;
+		background-size: auto 6px;
+		background-size: auto auto;
+
+			/* Multiple backgrounds */
+		background-size: auto, auto; /* Not to be confused with `auto auto` */
+		background-size: 50%, 25%, 25%;
+		background-size: 6px, auto, contain;
+
+			/* Global values */
+		background-size: inherit;
+		background-size: initial;
+		background-size: revert;
+		background-size: revert-layer;
+		background-size: unset;
+
+ 7. background-attachment
+
+			
+	background-attachment: scroll;	-> padrão; o fundo rola junto com o conteúdo
+			       fixed;	-> fundo fixo à tela, a medida que o conteúdo rola                                             (ótimo combinado com background-size: cover;)
+
+
+ 8. background SHORTHAND
+
+	Shorthand - background:
+	
+ 		Sequência:	color > image > position > / > size > repeat > attachment
+
+ 		Ex:	
+			background: black url('imagens/wallpaper002.jpg') center center / cover no-repeat fixed;
+            
+
+* View-Height:
+
+  1. 100vh:
+	
+	   É 100% da viewport. E quando falamos em web responsiva, a viewport é a área visível pelo usuário de uma página web. O conteúdo que não está visível, só pode ser visto com um scroll, por exemplo.
+		
+	   Obs:
+
+		Ao invés de botar o { height: 98vh; } para não aparecer a barrar de rolagem, basta colocar normalmente { height: 100vh; } e acrescentar a declaração { margin: 0px; } no interior do seletor body. Assim não é preciso ficar testando os valores de vh para cada navegador, devices e suas variações.
+
+		O que faz aparecer a barra de rolagem é o body que vem com uma margem padrão. Ao colocar o height do body, que está com a imagem, para 100% da área de visão, o navegador acrescenta mais um espaço em branco que é essa margem, portanto a rolagem aparece, porque o body passa a ocupar 100% da área do navegaor + margem. Depois é só centralizar a imagem com { background-position: center center; }
+
+	   
+
+* Centralização Vertical de Caixas:
+
+	1. Posicionamento do elemento pai tem q ser relativa, postition: relative;
+	2. Se o pai for uma box (div, section, article..) ela é default position relative
+	3. Já o posicionamento do próprio elemento deverá ser absoluto position: absolute;
+	4. Quando colocamos uma posição absoluta, podemos usar as propriedades left e top
+	5. Se colocarmos left: 50%; e top: 50%; ele ficará alinhado no centro do elemento pai com a ponta esquerda de cima dele
+	6. Para alinharmos centro com centro, utilizaremos a propriedade transform com a função translate(), transform: translate(-50%,-50);
+	7. Passamos os parametros -50% e -50% para movermos pra esquerda e cima
+
+
+* Conhecimentos adiquiridos no projeto Cordel:
+
+	1. Fontes google:
+
+		Pesquise fontes google
+
+		Escolha e clique em importe
+
+		No comeco do arquivo css coloque o importe dado pelo site
+
+	2. Variáveis css:
+
+		:root {
+			--fonte1: Verdana, Geneva, Tahoma, sans-serif;
+			--fonte2: 'Passion One', cursive;
+			--fonte3: 'Sriracha', cursive;
+		}
+
+	3. Letras maíusculas
+
+		text-transform: uppercase;  esse transforma tds as letras em maiúscula
+
+		font-variant: small-caps; /*transforma tds as letras em maiúsculas mas as primeiras são maiores q o resto da palavra
+    
+	4. ViewPort:
+
+		font-size: 10vw; /*10% da largura tela, tornando-o um pouco responsivo*/
+		font-size: 3.5vw; /*3.5% da largura tela, tornando-o um pouco responsivo*/
+		padding-top: 10vh; /*10% da tela pra parte de cima*/
+   		padding-bottom: 10vh; /*10% da tela pra aprte de baixo*/
+
+
+	5. Sombra pra contraste
+
+		box-shadow: inset 0.6rem 0.6rem 1.3rem 0rem rgba(0, 0, 0, 0.473); /* Sombra interna (insert) na box, que tem imagem de fundo, para diferenciar com a box normal, que é branca */
+
+		text-shadow: 1px 1px 0px black; /* Uma leve sombra na letra do texto para tornar a letra mais legível*/
+
+	6. Efeito PARALLAX
+
+		Esolha uma foto para fundo de tela
+		E coloque no css (no elemento que vc quer): background-attachment: fixed; /* Cria o efeito PARALLAX */
+
+
+* Tabelas:
+
+	1. Primeira grande dica: 
+
+		NÃO use tabela para criar a estrutura do seu site!!
+
+	2. Criar uma tabela:
+
+		Use a tag <table></table
+
+        3. Hierarquia de Tabelas Simples:
+
+	        TABLE = Tabela
+	            TABLE ROW = Linha de Tabela = <tr></tr>
+	            TABLE HEADER = Cabeçalho de Tabela = <th></th>
+	            TABLE DATA = Dado de Tabela = <td></td>
+
+	4. Exemplo Simples:
+
+		<table>        
+			<tr class="row"> <!-- Primeira Linha -->
+				<td>A1</td>
+				<td>B1</td>
+				<td>C1</td>
+			</tr>
+			<tr class="row"> <!-- Segunda Linha -->
+				<td>A2</td>
+				<td>B2</td>
+				<td>C2</td>
+			</tr>
+			<tr class="row"> <!-- Terceira Linha -->
+				<td>A3</td>
+				<td>B3</td>
+				<td>C3</td>
+			</tr>
+			<tr class="row"> <!-- Quarta Linha -->
+				<td>A4</td>
+				<td>B4</td>
+				<td>C4</td>
+			</tr>     
+
+		</table>       
+
+	5. Separação de células:
+
+	
+        	border-collapse: collapse; /*Significa juntos*/
+		border-collapse: separate; Valor padrão que significa separado
+
+
+	6. Hierarquia não obedecida:
+
+		Se a hierarquia não for obedecida, os dados vão aparecer antes ou depois da tabela. Ou seja tabelas são muito rígidas e devemos seguir fielmente a hierarquia das tags
+
+	7. Alinhamentos de tabela:
+
+		Por padrão ela vem alinhada no centro, verticalmente, e a esquerda, horizontalmente. Colocando o td com a propriedade text-align no center right, já resolve.
+
+		Para alinhamento vertical podemos usar a propriedade vertical-align, utilizando top ou bottom. Por padrão vem em middle
+
+	8. Anatomia de tabelas grandes:
+
+		O HTML5 trouxe algumas tags semânticas, como <main>/<main>, <header>/<header>, <article>/<article>, <section>/<section>. E trouxe também para tabelas, que funciona principalmete para tabelas grandes, com muitos conteúdos (recomendação do W3C).
+    
+	            TABLE
+                	CAPTION = Título, legenda, da tabela.
+        	        THEAD
+                	    tr, td th
+       	         	TBODY
+                    		tr, td th
+                	TFOOT
+                    		tr, td th
+
+		OBS: Mesmo se vc colocar THEAD,TBODY e TFOOT em ordens diferentes, o browser entende e coloca na ordem certa.
+
+	9. Escopo to Elemento th:
+
+		Qual momento eu uso o th ou td?
+
+			th são títulos
+			td são dados
+		
+		scope:
+
+			atributos dos elementos de uma tabela, para dar exatidao ao grupo
+
+	10. Efeito zebrado:
+
+		Utilizando a pseudo classe :nth-child() mudamos o background, como no ex abaixo para linhas pares:
+		
+			tbody > tr:nth-child(2n){
+				background-color: rgba(47, 79, 79, 0.713);
+			}
+
+			ou
+
+			tbody > tr:nth-child(even){
+				background-color: rgba(47, 79, 79, 0.713);
+			}
+
+		2n e even = PAR
+		2n-1 e odd = ÍMPAR
+
+	11. Cabeçalho fixo
+
+		1º Passo - Usar posicionamento relativo na tabela:		position: relative;
+
+		2º Passo - Fixar o cabeçalho:		position: sticky;
+
+		3º Passo - Grudar o cabeçalho na tela: top: -0.1rem;
+			OBS: Para footer colocamos bottom: -0.1rem; 
+
+	12. Mesclagem de células
+
+		Existem 2 tipos de expansões, de coluna e de linha.
+			Expansão de coluna é o atributo colspan
+			Expansão de linha é o atributo rowspan
+		A quantidade colocada no atributo será a quantidade de células mescladas
+
+	13. Escopo de Grupo
+
+		Já foi visto escopo, para linhas e colunas. Mas existem mais dois tipos de escopo que sao os de grupos de linhas (rowgroup) e grupos de colunas (colroup).
+		
+		Quando usamos mesclagem, geralmente precisamos usar colgroup ou rowgroup. Entretanto, não é sempre que com expansão/mesclagem irá precisar ter um escopo em grupo. É importante ter a noção para avaliar cada caso.
+
+	14. Agrupando colunas
+
+		Na parte de HTML. Ex:
+		
+			<table>
+        		<colgroup>
+            		        <col class="cnome">
+            		        <col class="c s e x o">
+            		        <col class="cidade">
+            		        <col class="cprof">
+        		</ colgroup>
+			.
+			.
+
+		Na parte de CSS. Ex:
+		
+			col cnome {
+                background-color: yellow;
+       	 	}
+		    col  c s e x o {
+			    background-color: green;
+       	 	}
+		    .
+		    .
+
+		Agora para grupo de colunas.
+		
+		HTML. Ex:
+		
+			<colgroup>
+                <col class="cnome">
+                <col class="cgrupo" span="2">	(2 colunas serão formatadas)
+                <col class="cprof">
+        	</ colgroup>
+
+	    CSS:
+			col cgrupo {
+                background-color: red;
+		    }
+
+	15. Tabelas Responsivas
+
+		A dica é:
+			Indenpedente do tamanho o browser ira expremer a tabela e quando vazar, ele coloca uma rolagem lateral
+		
+		Para fazer, vc deve envolopar sua tabela em uma div, criar uma classe ou id para ela e no css colocar: overflow-x: auto;. Para rolagem horizontal.
+
+		Anotação:
+
+		Algumas tabelas às vezes ficam lateralmente muito grandes, fazendo com que o conteúdo acabe vazando em telas pequenas (celulares)... Resultando numa página com rolagem lateral, que é indesejada quando trabalhamos com responsividade.
+
+		Para resolver isso, devemos tornar a tabela da sua página responsiva. A primeira coisa que devemos fazer para ajeitar a formatação da nossa tabela é envelopar a tag <table> (toda a tabela) com uma <div>, posteriormente identifique essa div com um id ou class (nome: container).
+
+		Em seguida, abra um seletor CSS para a div/class que acabamos de configurar (div.container {...} ) e insira a seguinte declaração:
+
+		div.container {
+			overflow-x: auto;
+		}
+
+		O overflow é uma propriedade de estilo do CSS utilizada para tratar conteúdos que ultrapassam os limites de um elemento. O objetivo do overflow é fazer com que conteúdos muito grandes possam caber dentro de uma página através do uso de barras de rolagem.
+
+		Apenas com essa configuração já é suficiente para tornar a nossa tabela responsiva. Na prática, quando essa tabela for aberta numa tela com uma largura inferior à mesma, ela será "cortada" e exibida dentro de uma caixa com barras de rolagem horizontal, evitando o vazamento. 
+
+		Toda essa adaptação ocorre de forma automática, isso se deve ao fato de usarmos o valor "auto". Esse valor (auto) exibe barras de rolagem somente quando necessário, somente quanto a largura do container se torna insuficiente para exibir o elemento.
+
+		PROPRIEDADE - OVERFLOW:
+
+		Usamos a propriedade " overflow-x ", entretanto existem também o " overflow-y " e o " overflow ". Segue uma descrição de cada um deles:
+
+		overflow-x - A propriedade CSS "overflow-x" é usada para definir o que deve ser mostrado quando o conteúdo transborda dos extremos esquerdo e direito de um elemento em bloco (eixo horizontal).
+
+		overflow-y - A propriedade CSS "overflow-y" define o que deve ser mostrado quando o conteúdo transborda dos extremos superior e inferior de um elemento em bloco (eixo vertical).
+
+		overflow - A propriedade CSS "overflow" é uma abreviação para as propriedades "overflow-x" e "overflow-y" em uma única declaração.
+
+		As propriedades overflow aceitam alguns valores, dentre os principais:
+
+		visible - O valor "visible" exibe o conteúdo que exceder o tamanho do elemento fora da área designada para ele,  (valor padrão).
+
+		hidden - O valor "hidden" simplesmente corta o conteúdo que exceder o tamanho do elemento.
+
+		scroll - O valor "scroll" exibe "a todo momento" barras de rolagem para permitir que o usuário role o conteúdo que exceder o tamanho do elemento.
+
+		auto - O valor "auto" exibe barras de rolagem somente quando necessário (largura ou altura insuficientes)
+
+
+
+* Lorem:
+
+	Lorem com um número na frente indica o tamanho do lorem com o número de palavras.
+
+		Exemplo: lorem20, lorem100, lorem1000 etc...
+
+	Lorem com um número na frente indica o tamanho do lorem com o número de palavras.
+	
+		Exemplo: lorem20, lorem100, lorem1000 etc...
+
+	Possível colocar juntos.
+
+		Exemplo lorem100*5
+
+	Uma dica, se você quiser uma tag dentro de outra é so usar um '>' 
+	
+		Exemplo: p*(número que vc quer)>lorem*(quantidade de palavras)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

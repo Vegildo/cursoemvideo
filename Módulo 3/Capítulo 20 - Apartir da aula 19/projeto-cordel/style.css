@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+
+
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: darkgray;
+    font-family: var(--fonte1);   
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header > h1 {
+    padding-top: 50px;
+    /*text-transform: uppercase;  esse transforma tds as letras em maiúscula*/
+    font-variant: small-caps; /*transforma tds as letras em maiúsculas mas as primeiras são maiores q o resto da palavra*/
+    font-family: var(--fonte2);
+    font-size: 10vw; /*10% da largura tela, tornando-o um pouco responsivo*/
+}
+
+header > p {
+    padding-bottom: 50px;
+}
+
+header a, footer a { 
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+header a:hover, footer a:hover {
+    text-decoration: underline;
+} 
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+section {
+    padding-top: 10vh; /*10% da tela pra parte de cima*/
+    padding-bottom: 10vh; /*10% da tela pra aprte de baixo*/
+    padding-left: 30px;
+    line-height: 2em; /*Espaço entre as linhas*/
+    font-family: var(--fonte3);
+    font-size: 3.5vw; /*3.5% da largura tela, tornando-o um pouco responsivo*/
+}
+
+section > p {
+    padding-bottom: 2em;
+}
+
+
+section.normal {
+    background-color: white;
+    color: black;
+}
+
+
+section.image {
+    color: white;
+    box-shadow: inset 0.6rem 0.6rem 1.3rem 0rem rgba(0, 0, 0, 0.473); /* Sombra interna (insert) na box, que tem imagem de fundo, para diferenciar com a box normal, que é branca */
+    background-color: rgb(51, 51, 51);
+    background-size: cover; /* Cobrir a imagem de fundo na sua box, diminuindo sua dimensão*/
+    background-attachment: fixed; /* Cria o efeito PARALLAX */
+}
+
+
+section.image > p {
+    display: inline-block; /* box que se adapta ao tamanho do conteúdo */
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.514); /* caixa com uma leve sombra para ter uma distinção com a foto de fundo */
+    text-shadow: 1px 1px 0px black; /* Uma leve sombra na letra do texto para tornar a letra mais legível*/
+}
+
+section#img01 {
+    background-image: url(images/background001.jpg);
+    background-position: right center;   
+}
+
+
+section#img02 {
+    background-image: url(images/background002.jpg);
+}
+
+    

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Imagem de Fundo</title>
+
+    <style>
+        :root {
+            font-size: 62.5%; /* Transforma 1rem em 10 px */
+        }
+        body {
+            background-image: url(images/wallpaper001.jpg);
+        }
+        div.square {
+            display: inline-block; /* Se quisermos divs uma do lado da outra */
+            border: 0.2rem solid black;
+            border-radius: 1rem;
+            background-color: lightgray;
+            width: 30rem;
+            height: 30rem;
+        }
+        div#q1 {
+            background-color: skyblue;
+        }
+        div#q2 {
+            background-image: linear-gradient(to bottom, yellow, red);
+        }
+        div#q3 {
+            background-image: url(images/pattern003.png);
+        }        
+    </style>
+</head>
+<body>
+
+    <div class="square" id="q1"></div>
+    <div class="square" id="q2"></div>
+    <div class="square" id="q3"></div>
+
+    
+</body>
+</html>

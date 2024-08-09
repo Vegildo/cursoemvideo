@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Alinhamento Vertical</title>
+    <style>
+        :root {
+            font-size: 62.5%; /* Transformando 1rem em 10px */
+        }
+        #container {
+            background-image: url(images/target001.png);
+            background-size: 100% 100%;
+
+            position: relative;
+            height: 96vh;/*96% da viewport*/
+            padding: 1rem;
+            background-color: blueviolet;
+        }
+        #content {
+            background-image: url(images/target001.png);
+            background-size: 100% 100%;
+            background-color: gold;
+
+            position: absolute;
+            height: 20rem;
+            width: 30rem;
+            
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%,-50%);
+            
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <article id="content">
+
+        </article>
+    </section>
+
+</body>
+</html>

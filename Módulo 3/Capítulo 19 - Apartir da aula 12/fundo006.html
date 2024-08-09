@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo Fixo de Tela</title>
+
+    <style>
+        :root {
+            font-size: 62.5%; /*Transformando 1rem em 10px*/
+        }
+        body {
+            font-size: 1.6rem;
+            height: 100vh; /*100% da viewport*/
+            margin: 0; /*retirando a margem padrão do body, por causa da barra de rolagem*/
+            /*
+            background-color: rgb(5, 5, 5);
+            background-image: url(images/wallpaper002.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;  //Mantém a imagem em 100% da viewport
+            //background-size: contain; // Mantém a imagem 100% exibida
+            background-size: 100% 100%; //Forma burra, pois distorce a imagem de fundo
+            background-attachment: fixed;*/   
+            
+            /* Shorthand - background
+
+	            color > image > position/size > repeat  attachment 
+            
+                Na real não importa a ordem, somente q position estaja primeiro após uma barra (/) e size logo depois disso
+            */
+            background: rgb(5, 5, 5) url(images/wallpaper002.jpg) center center /cover no-repeat fixed;
+        
+        }
+        main {
+            background-color: antiquewhite;
+            max-width: 40rem;
+            padding: 1rem;
+            margin: 0 auto;
+            border: 0.1rem solid rgb(0, 0, 100);
+            border-radius: 1.5rem;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+
+        <h1>Teste de Imagem de Fundo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptatem a quibusdam magnam ipsa, ipsam beatae ducimus distinctio voluptate perspiciatis porro eligendi at asperiores repellat obcaecati! Dolorem labore eos autem.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit nihil veniam dolorum laudantium possimus cumque autem beatae hic distinctio sunt exercitationem, quae minima odit facilis modi voluptate, asperiores voluptatem error!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet velit nesciunt officia iure consequuntur aut, voluptas necessitatibus nisi omnis numquam cumque dignissimos fugiat deleniti, repellendus excepturi sapiente temporibus placeat harum.</p>
+
+    </main>
+</body>
+</html>
