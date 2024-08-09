@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de iframe</title>
+
+    <style>
+        :root {
+            font-size: 62.5%;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        iframe#screen {
+            width: 96vw;
+            height: 40rem;
+            border: 0.2rem solid black;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Faça uma Escolha</h1>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima fugit dolores nobis corporis assumenda earum similique suscipit nihil obcaecati debitis placeat beatae repellat dolore, reiciendis et commodi hic laboriosam.</p>
+
+    <ul>
+        <li><a href="paginas-extras/pagina001.html" target="my-frame">Primeira Página</a></li>
+        <li><a href="paginas-extras/pagina002.html" target="my-frame">Segunda Página</a></li>
+        <li><a href="paginas-extras/pagina003.html" target="my-frame">Terceira Página</a></li>
+    </ul>
+
+    <p>Vel quod deleniti, ducimus, explicabo voluptate enim praesentium omnis vero sint, sit fugit necessitatibus neque laboriosam obcaecati? Nisi ipsam fuga omnis cum sapiente, optio dicta ut minus laboriosam, recusandae ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste doloremque numquam quasi assumenda nemo perferendis quidem totam in ratione iure itaque, explicabo quia autem voluptatum possimus cumque fuga aspernatur facilis!</p>
+
+    <iframe srcdoc="<h1> Escolha uma das opções acima </h1><br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet aliquid vel maxime molestias unde hic magni consectetur, sunt id adipisci, voluptatum deleniti voluptates sequi nisi quod quo veritatis totam! At!</p><img src='images/favicon-vaduz.png'>" id="screen" name="my-frame">
+        <p>Infelizmente seu navegador não é compativel com isso</p>
+    </iframe>
+     
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse illo omnis maiores maxime vero blanditiis ut cumque! Inventore, officiis nam. Vel cum fugiat odit quos veritatis tempora eveniet. Voluptatem, sunt. At nisi id consectetur sint repellat! Repellat at ex beatae cumque numquam temporibus accusamus autem cupiditate, exercitationem architecto! Tempore error architecto iure necessitatibus maxime sit eaque vero ex expedita nesciunt.</p>
+</body>
+</html>

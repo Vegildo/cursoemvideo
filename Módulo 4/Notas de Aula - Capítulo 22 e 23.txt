@@ -1,0 +1,360 @@
+
+				  Curso em vídeo - Módulo 4
+
+===========================================================================================
+
+
+
+ Capítulo 22 - Iframe:
+
+	1. Para que serve um iframe:
+		
+		Serve para criarmos uma "janela", ou seja, é como se fosse uma aba nova de navegador, só que dentro da sua página.
+
+		Dessa forma, o iframe é tag em HTML que viabiliza a inclusão de outro documento HTML dentro do mesmo. Em outras palavras ele permite que, apartir de uma página inicial, seja possível abrir uma seção de outra página
+	
+	2. Usando iframes:
+	
+		Utilizaremos a tag  `<iframe></iframe>`.
+		
+		Após abrir a tag, uma estrutura em forma de quadro será criada, essa estrutura é do tipo "inline"... Isso significa que caso você insira a tag no meio de uma linha/frase por exemplo, esse quadro ficará posicionado exatamente entre as palavras da frase. Não terá um comportamento de caixa "box-level" a menos que você altere o display do elemento.
+
+		De forma default (padrão), ao abrir a tag os atributos "src" e "frameborder" já estarão embutidos na tag. O atributo frameborder vem com o valor "0", removendo a borda do nosso iframe. Já como valor do atributo src, deve-se inserir o link da página que deseja abrir dentro da janela iframe.
+
+		Assim, o site escolhido será carregado dentro desse iframe. De forma default o iframe é carregado em uma dimensão de altura e largura bem pequena, entretando podemos modificar facilmente no CSS.
+
+
+
+	3. Proteção:
+
+		Existem alguns sites que possuem proteção para que o seu conteúdo não seja exibido dentro de um iframe em páginas de terceiros, nesse caso a conexão será recusada. 
+		
+		Um exemplo de site que não aceita conexão com iframes é o Google.
+
+		Iframes são úteis em determinadas situações, mas você precisa saber que eles tem alguns problemas de segurança.
+		
+		Entretanto, com o avanço do HTML5, é possível prever e resolver (ou pelo menos reduzir) tais inconvenientes na questão da segurança.
+
+		Por isso, é importante que você saiba usar o iframe, e que também saiba em que momentos deve usar ou não usar. Quando utilizar, saber quais são as facilidades que ele vai te trazer e quais são os problemas que ele pode te trazer.
+
+	4. Tratamento de Erro em Iframes:
+
+		Nem todos os navegadores para celular, para dispositivos móveis, tem suporte para iframes. No meio da tag podemos inserir conteúdo (que so ficará visível caso ocorra um erro, como o caso do navegador do dispositivo não ter compatibilidade com iframes, igual nas tags de vídeo)
+
+		Ou até mesmo um link que direciona o usuário para o site que ele deveria visualizar no iframe 
+
+	5. Dimensionamento direto no HTML:
+
+		A altura x largura padrao da tag é, respectivamente, de 300x150px. 
+		
+		É possível configurar essas medidas diretamente na tag com as propriedades inerentes height e width. Mas também se pode configurar normalmente com css, só é necessário abrir um seletor para o elemento e inserir as declarações.
+
+		Lembrando que, as configurações feitas no seletor tem preferência e sempre irão sobrepor as configurações de largura e altura feitas por parâmetros HTML, lembre-se disso. Caso não exista nenhuma configuração nas suas folhas de estilo, aí sim ficam valendo as dimensões que foram configuradas como parâmetro no HTML. 	
+	
+	6. Estilização direto no HTML :
+		
+		Para o elemento iframe, também existe o parâmetro "scrolling", que igualmente deve ser inserido dentro da tag de abertura do iframe. Esse parâmetro serve para configurar a barra de rolagem do iframe, e ele aceita os seguintes valores: "auto", "yes" e "no".
+
+		auto - É o valor padrão, faz com que a barra de rolagem no iframe apareça e possa ser utilizada normalmente.
+
+		yes - Força a exibição de uma barra de rolagem, mesmo que o site embutido no iframe não tenha uma.
+
+		no - Bloqueia a barra de rolagem do site que está embutido no iframe, impedindo o usuário de scrollar.  
+
+		Você pode também adicionar uma borda com o estilo que preferir no seu iframe, para fazer isso basta inserir a declaração de borda dentro do seletor CSS do iframe
+
+	7. Acessando conteúdo local:
+
+		No seu iframe, ao invés de carregar um conteúdo externo (sites de terceiros), você também pode carregar conteúdo local (uma página sua)... Dessa forma, não temos que nos preocupar com a questão do bloqueio/proteção que alguns sites tem em relação ao iframe, já que nesse caso estaremos trabalhando com conteúdo local.
+
+		Para abrir uma página local dentro do seu iframe, é muito simples: Basta que você insira como valor do parâmetro "src" no iframe o endereço local da sua página.  
+
+		Exemplo:
+
+			<iframe src=" pagina001.html " frameborder="0"></iframe>
+
+		Dessa maneira você pode carregar páginas internas, do seu próprio servidor, dentro do seu iframe... Dito isso, podemos usar esse iframe com conteúdo local como uma forma de replicar o efeito da propriedade overflow (com barras de rolagem, tratar conteúdos que ultrapassam limites).
+
+		Por exemplo, se você tem uma tabela grande que precisa ser responsiva, ao invés de utilizar a propriedade overflow, existe a possibilidade de mover essa tabela para uma outra página do seu servidor e exibi-la em forma de iframe na suposta página primária, limitando suas dimensões com barras de rolagem e tornando-a responsiva somente com o iframe - limitando a largura e altura desse iframe - (para centralizar um iframe utilize margin auto e display block).
+
+		Atenção: Talvez você possa estar se perguntando se na hora de tornar uma tabela responsiva, deve usar o overflow ou a técnica do iframe citada aqui... A resposta é que, nesse caso (tabelas), é melhor você tornar responsivo com o overflow. Isso se deve ao fato de que existe um problema de indexação e relacionamento de conteúdo pelos mecanismos de busca quando usamos o iframe. 
+
+		Como na maioria das vezes a nossa tabela possui um conteúdo relacionado com o conteúdo restante no site, e queremos uma associação entre esses conteúdos, é melhor tornar responsivo com o overflow... Já que com o iframe os mecanismos de busca não conseguiriam fazer esse relacionamento da forma adequada.
+
+		Entretanto, uma das vantagens de exibir o seu conteúdo por meio de um iframe é que desse modo temos a praticidade de conseguir fazer com que as configurações de estilo sejam separadas do arquivo primário. Como sabemos, ao utilizar o iframe, é como se abríssemos a página dentro de uma nova aba, só que dentro desse frame... Permitindo assim justamente a separação dos arquivos de estilo.
+
+		No caso da responsividade da tabela, de fato é melhor usar o overflow, mas se você vai inserir outros tipos de conteúdo que não sejam tabela, vale a pena considerar a opção dos iframes.
+
+	8. Navegação:
+
+		Quando exibimos conteúdo de forma local pelo nosso iframe, às vezes é interessante criar uma pasta para armazenar justamente essas páginas extras que só existem para serem exibidas pelo iframe.
+		
+		IFRAME INTERATIVO:
+
+		Quando você cria um iframe para exibir uma página de seu interesse, eventualmente você pode querer substituir essa página que está configurada no iframe por outra... Naturalmente, para alterar a página que está sendo exibida, você muda o endereço contido no parâmetro src do iframe.
+
+		Entretanto, também é possível realizar essa transição de página de forma interativa, atribuindo essa ação para o próprio usuário.
+
+		Por exemplo, considerando que você tenha uma página primária com um iframe dentro, e que também tenha mais três outras páginas secundárias: 
+
+		Para fazer a transição interativa dessas três páginas no seu iframe, é necessário que você, lá na página primária, monte uma lista com os links das três páginas secundárias. Exemplo:
+
+		- Primeira página
+		- Segunda página
+		- Terceira página
+
+		A partir daí, queremos que quando o usuário clique em algum desses links, a respectiva página secundária seja renderizada no iframe (e não será necessário recarregar a página primária para que isso ocorra). 
+
+		Para tal, na tag do iframe você precisa inserir o parâmetro " name ", e atribuir a ele uma nomenclatura (de sua preferência - ex: 'my-frame')
+
+		Agora, para associarmos os nossos links de páginas secundárias ao iframe, devemos inserir na tag dos links (<a></a>) o parâmetro "target", tendo como valor justamente a nomenclatura do parâmetro "name" ('my-frame' no caso do nosso exemplo).
+
+		Feito isso, ao clicarmos em algum link da lista, a respectiva página secundária será carregada no iframe. Dessa forma conseguimos criar um sistema de navegação numa página primária e interagir abrindo páginas secundárias dentro do iframe... E isso tudo apenas usando links com o target apontando para o "name" do nosso iframe (lembre-se que para fazer isso o parâmetro name é obrigatório - e esse name tem que ser exatamente o mesmo que usamos no target)  
+
+		Nota: Inicialmente, quando a nossa página primária for carregada, o nosso iframe estará vazio... Isso se deve ao fato de que não especificamos nenhuma página dentro do parâmetro src dele. Se você quiser que inicialmente (antes de clicarmos em qualquer link da lista de páginas secundárias) o iframe seja carregado com alguma página, é só inserir o endereço no  parâmetro src do iframe. 
+
+		PARÂMETRO NAME:
+
+		Sobre o parâmetro "name", de certa maneira ele serve para identificar um elemento, assim como o parâmetro "id" faz...
+
+		De forma geral, pode-se dizer que o id é importante para o browser (front-end), para a manipulação do DOM (arvore do documento) e CSS; e o name é importante para o servidor (back-end).
+
+		O name é principalmente usado para elementos de <form>, ou seja para campos de inserção de dados e é exatamente o name que identifica no servidor o campo. Quando o envio de um form é executado, os campos dele vão para o servidor num objeto cujas chaves são o name que esses elementos têm.
+
+		E diferente do "id", pode haver mais do que um elemento com o mesmo "name"...
+
+		Uma outra funcionalidade do parâmetro "name" é a seguinte: Ao invés de atualizar a página, fazer uma submissão de formulário para um iframe... Ainda que o action esteja apontando para outra página, a renderização da mesma se dará dentro do iframe. (usamos o name para isso nesse exercício)
+
+		Mas como foi dito, geralmente o atributo name serve para representar uma coleção de valores, enviados através de um formulário, para o servidor... Algo um pouco mais avançado.
+	
+	9. Conteúdo Dinâmico no iframe:
+
+		Inicialmente, quando a nossa página primária for carregada, o nosso iframe interativo estará vazio. Isso se deve ao fato de que não especificamos nenhuma página dentro do parâmetro src dele...
+
+		O ideal seria que colocássemos algum conteúdo dentro dele para ser exibido de forma inicial, antes que alguma página secundária seja renderizada de forma interativa.
+
+		Uma das maneiras de se fazer isso é você criar um arquivo separado e inserir o endereço desse arquivo no parâmetro src do iframe, funcionando como uma página padrão e inicial.
+
+		Essa página inicial pode conter informações como: " Escolha um das opções acima (páginas secundárias) " e alguma imagem em forma de logo.
+
+		Entretanto, para um iframe interativo, também é possível fazer essa "página inicial" com o parâmetro " srcdoc ". Esse parâmetro permite que adicionemos, como valor do parâmetro, especificações em HTML (h1, p, img e por aí vai). 
+
+		Esse código HTML que inserirmos como valor de srcdoc será renderizado no nosso iframe interativo, funcionando justamente como uma página inicial.
+
+		Quando você decide usar o parâmetro srcdoc, a primeira coisa a se fazer é deletar o parâmetro padrão "src", e aí sim inserir o srcdoc... Substituir o src pelo srcdoc. Posteriormente insira o seu código HTML como valor de srcdoc.
+
+		Dessa maneira geramos uma página inicial de forma estática para o nosso iframe sem precisar criar um arquivo separado.
+
+		Entretanto, o srcdoc tem a desvantagem que só podemos inserir um código básico em HTML, não dá pra fazer muita coisa além disso. Por isso a recomendação é que, caso você queira algo mais evoluído, fazer como foi dito anteriormente e criar um arquivo separado com o seu código HTML e inclusive CSS. Ao invés de criar um arquivo separado, você também pode inserir uma imagem como plano de fundo, background... É uma opção.
+
+	10. Desvantagens:
+
+		MECANISMOS DE BUSCA:
+
+		Mecanismos de busca, como o Google por exemplo, utilizam um robô indexador chamado "Googlebot", que vai encontrando sites e vasculhando esses sites. 
+		
+		Indexar significa, nesse contexto, inserir um ou vários sites na base de dados de motores de pesquisa, fazendo com que eles apareçam como resultado para quem faz uma busca. 
+
+		Uma página é indexada pelo Google quando ela é visitada pelo rastreador do Google (Googlebot), passa por uma análise de conteúdo e significado e, em seguida, é armazenada no índice do Google.
+
+		A partir daí, de acordo com a relevância determinada por esse robô (Googlebot) e pelos algoritmos de indexação do Google, eles vão organizando os sites no campo de Resultados de Pesquisa numa ordem hierárquica de relevância.
+
+		O campo de Resultados de Pesquisa pode ser dividido em duas áreas: 
+
+		Área do Conteúdo Pago: Sites que estão no topo do campo de resultados porque pagaram para ter essa posição. 
+
+		Área do Conteúdo Orgânico: Sites que estão entre os primeiros no campo de resultados porque fizeram por merecer, subiram na hierarquia de relevância do Google de forma orgânica. Sites que produziram conteúdo e o algoritmo do Google considerou que esse site teve uma ótima relevância em relação ao assunto abordado, sendo posicionado na frente por esse motivo.
+
+		Mas como o Google identifica a relevância e decide quem será posicionado em cima e quem será posicionado embaixo? 
+
+		Na hora que o Googlebot descobre um site, ele vai até esse site, analisa o conteúdo e decide se vale a pena posicionar mais acima ou mais abaixo no campo de resultados de pesquisa.
+
+		O problema é que: Quando você usa iframes no seu site, segundo o próprio Google, existem alguns problemas para que o Googlebot entre no iframe e consiga analisar e indexar o conteúdo que está lá dentro. (esses problemas não significam impedição ou negação total, mas atrapalham) 
+
+		É um problema de indexação e relacionamento de conteúdo pelos mecanismos de busca quando usamos o iframe. Não é uma regra, mas tecnicamente é possível que o conteúdo dentro do iframe tenha algum problema para indexação, e isso é ruim para alguns sites.
+
+		Sendo assim, nunca monte um site inteiro com o uso de muitos iframes ou com dentro do iframe um conteúdo que é muito sensível para o seu site, que é altamente indexável.
+
+		Inclusive existe uma nota da comunidade Google falando justamente sobre esse assunto, alertando sobre esse possível problema. Não é garantido que o Googlebot não entre nesses iframes, mas o Google avisa que pode ser que algum problema de indexação, de identificação do Googlebot, possa existir.		
+
+		Portanto, para colocar conteúdo muito importante, evite utilizar iframes.
+
+		ACESSIBILIDADE:
+
+		Acessibilidade serve como um facilitador para aquelas pessoas com algum tipo de necessidade especial. Pessoas cegas por exemplo, com a ajuda de softwares chamados " Leitores de Tela ", conseguem usar computadores.
+
+		O problema é que os softwares leitores de tela também apresentam alguns problemas para conseguir acessar os iframes. Eles ficam meio perdidos ali, é bom que você fique ciente disso.
+
+		USABILIDADE:
+
+		E além dos problemas de acessibilidade, existem também os problemas de usabilidade, que são aqueles em que o próprio navegador acaba se confundindo... Ou até mesmo o próprio usuário acaba se confundindo.
+
+		Por exemplo, quando acessamos um site de terceiro por um iframe, ao avançarmos para uma outra área desse site, caso queiramos voltar para a tela inicial, ao clicar no botão "voltar" do navegador, pode ser que alguns browsers não executem o comando de retorno para a página que está dentro do iframe, e sim para a página primária (aquela que contém o iframe). O navegador pode se confundir na hora de decidir se vai voltar dentro do iframe ou se vai voltar dentro do conteúdo principal. É um problema de usabilidade.
+
+		Ainda sobre usabilidade, outro problema são os sites que possuem links que abrem com o "target em _blank" (abrir em uma janela nova)... Se você inserir um site desses no seu iframe, e o usuário clicar em um desses links que abrem em uma nova janela, pode ser que alguns navegadores não consigam entender que a janela nova deve ser aberta na área do browser e não dentro do iframe.
+
+		RESPONSIVIDADE:
+
+		Se o site de terceiro que você inserir dentro do seu iframe não for responsivo, pode ser que a página apareça toda "quebrada" dentro do seu iframe... 
+		É um erro de quem desenvolveu o site, entretanto a partir do momento que você adiciona esse site na sua página em forma de iframe, isso também se torna um erro seu, porque foi você quem escolheu adicionar esse site.
+
+		SEGURANÇA:
+
+		Ao inserir sites de terceiros nos seus iframes, isso acaba abrindo uma porta da sua página para outros sites. Então cuidado para quem você abre a porta... 
+
+		Por exemplo, ao não tomar cuidado, existe o risco de você inserir no seu iframe um site de terceiro que foi invadido e que está usando técnicas de captura de informações do usuário... E a partir daí, o SEU SITE começa a fazer isso para esse outro site danoso, já que os seus usuários estarão acessando esse site invadido a partir do seu.
+
+		Dessa forma, tome muito cuidado com os sites que você abre dentro de um iframe, dentro do seu próprio site... Isso é uma responsabilidade única e exclusivamente sua, do desenvolvedor do site. 
+
+		Isso pode deixar o seu site aberto a utilizar técnicas de invasão, alguns ataques como por exemplo o " cross-site scripting " e ataques " xss "... Essa é mais uma limitação dos iframes.
+
+		Em alguns casos de fato iremos precisar usar os iframes, só que não abuse do uso deles dentro do seu site. Nas ocasiões em que usamos iframes, utilizamos com as configurações de proteção ativadas, dando uma proteção um pouco maior do seu site em relação a outros iframes.
+
+
+	11. Parâmetros de Segurança em iframes:
+
+		Sandbox:
+
+		Bloqueia envio de informação por meio de formulários do site terceiro.
+
+		Para fazer isso, na tag do iframe, usamos o parâmetro " sandbox "... O valor para esse parâmetro deve ser o " sandbox "
+
+		Quando adicionamos o sandbox com o valor sandbox em nosso iframe, automaticamente o site que está dentro do quadro perde algumas funcionalidades, dentre elas: 
+
+		- Não pode mais enviar dados de formulários 
+		- Não pode mais executar scripts 
+		- Desabilita todo tipo de API, janelas modais e popups
+		- Desabilita todo tipo de plugin com <embed>, <object>, <applet>
+		- Evita que o site dentro do iframe assuma a navegação top level do navegador 
+		- Bloqueia recursos como autoplay e foco automático em elementos de formulário
+
+		ReferrerPolicy:
+
+		Serve para configurar a política de referência. O valor padrão usado para esse parâmetro é o " no-referrer-when-downgrade". Se quiser limitar ainda mais pode usar o valor "no-referrer"
+
+		Os sites conseguem monitorar nossos rastros de navegação através de um campo no cabeçalho http chamado Referer Header. Ele sempre indica onde o visitante estava quando decidiu ir para o seu site.
+
+		Esse é um dos recursos que as redes sociais como Twitter, Facebook e Instagram e sites como Google e YouTube usam para capturar os seus dados de navegação e entender o seu padrão de navegação para mostrar propagandas. Mas não é só pra isso que serve.
+
+		Acontece que, quando usamos essa configuração ( referrerpolicy="no-referrer" ), informamos que aquilo que está carregado dentro do iframe, NÃO vai coletar nenhum tipo de informação do usuário. O conteúdo que está dentro do iframe não vai poder capturar dados de ninguém, tonando o ambiente o mais anônimo possível. Conseguimos definir quantos dados serão compartilhados com o site de destino... Ou seja, com o valor "no-referer", nenhum dado.
+
+		Existem outros valores para o parâmetro referrerpolicy, como: 
+
+		- no-referer-when-downgrade (valor padrão citado) 
+		- origin 
+		- origin-when-cross-origin 
+		- same-origin 
+		- strict-origin 
+		- strict-origin-when-cross-origin
+		- unsafe-url 
+
+		Valores de Exceção para os Paraâmetros de Segurança:
+
+		Os dois parâmetros de segurança (sandbox e referrerpolicy), com os valores orientados, irão ligar o máximo de segurança dentro de seu iframe... Isso é bastante recomendado.
+
+		Porém, vamos imaginar que em um caso muito específico, para o funcionamento correto da sua aplicação, você queira deixar com que os iframes executem o envio de dados através de formulários... Nesse caso, devemos abrir algumas exceções no parâmetro "sandbox", fazemos isso com valores que concedem certos tipos de autorizações específicas.
+
+		Como sabemos, o parâmetro sandbox com o valor sandbox liga todas as configurações de segurança no máximo, aciona o máximo nível de segurança que ele consegue fazer.
+
+		Entretanto, conseguimos abrir exceções e desligar algumas coisas. Segue alguns valores para o parâmetro " sandbox " que concedem autorizações de segurança específicas (exceções de segurança): 
+
+		allow-same-origin: Para que formulários que estão em páginas do nosso próprio servidor (conteúdo local) passem a funcionar no iframe, podemos inserir o valor " allow-same-origin "... Dessa forma, uma exceção nas configurações de segurança é feita para os conteúdos de mesma origem (páginas do nosso próprio servidor passam a funcionar normalmente com permissão total, enquanto páginas de terceiros são "neutralizadas").
+
+		allow-forms: Também podemos conceder uma exceção para permitir que todo e qualquer formulário passe a funcionar normalmente (não só de conteúdo local, mas de páginas de terceiros também). Para permitir isso, use o valor " allow-forms ".
+
+		allow-scripts: O valor " allow-scripts " serve para abrirmos uma exceção na segurança para permitirmos scripts - Quando usamos especificamente o valor citado acima (allow-forms) temos também que usar justamente o "allow-scripts" em conjunto, visto que o HTML5 executa scripts quando roda formulários. Formulários necessitam de scripts para operar. Dependendo do site externo, é arriscado deixar scripts serem executados e ativos, isso se deve porque scripts podem ser maliciosos, então cuidado.
+
+	12. Aperfeiçoando iframes:
+
+		iframes são mt utilizados para incorporar vídeos do youtub e vimeo, podemos também incorporar mapas do Google e waze e 
+		além disso documento, apresentações e planilhas do google docs.
+
+		Reconmendado colocar uma envelopado por uma div com position em relative e o iframe com position absolute e widthe height em porcentagem. Dessa forma seu iframe ficará responsivo
+
+		Lembrando que somente não funciona para o google docs
+
+
+
+	OBS01. :
+
+		O "i" de iframe é derivado da palavra "inline" (em linha).
+		Resumidamente, um iframe seria um "frame inline", ou também podemos chamar de "quadro em linha" (frame = quadro + inline = em linha)
+
+	OBS02. :
+
+		Nesse caso das CSS, as configurações feitas no seletor tem preferência e sempre irão sobrepor as configurações de largura e altura feitas por parâmetros HTML, lembre-se disso. Caso não exista nenhuma configuração nas suas folhas de estilo, aí sim ficam valendo as dimensões que foram configuradas no HTML.
+
+	OBS03. :
+
+		Como nós já sabemos, vários sites possuem proteção contra o iframe, bloqueiam a sua visualização dentro deles... Talvez você possa pensar que por causa disso os iframes não tem serventia e acabe se perguntando de que forma vai utilizá-los... A resposta é simples: Você também pode inserir o seu próprio conteúdo (uma página sua, local) dentro de um iframe, existem muitas possibilidades com isso.
+		
+	OBS04. :
+
+		indexar = dispor em índice, numa lista que metodicamente indica o conteúdo de alguma coisa; ordenar/inserir
+
+ Capítulo 23 - Projeto Rede Sociais:
+
+	1. Centralizar div:
+
+		Coloque no elemento pai `position: relative;`
+
+		Já no próprio elemento coloque `position: absolute;`, `top: 50%;` e  `left: 50%;` isso centralizará a ponta esquerda de cima do elemento com o centro do elemento pai.
+
+		E com `transform: translate(-50%,-50%);` centraliza-se esse elemento com o centro desse elemento.
+
+	2. Dimensionar imagem:
+
+		Só colocar no css: `background-size: cover;`
+
+	3. Arredondar Elementos:
+
+		Só colocar no css: `border-radius: 50%;`
+
+	4. Sombra no Elemento:
+
+		Só colocar no css: `box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.400);`
+
+		Onde:
+
+		<length> | <length> | <length> | <color>
+
+	5. Passar elemento para a direita:
+
+		Só colocar no css: `text-align: right;`
+
+	6. Efeitos quando passamos o mouse no elemento:
+
+		Usamos no css o indicador `:hover`. Ex:
+		```
+		section.social-media img:hover {
+			border: 0.2rem solid rgba(255, 255, 255, 0.507);
+			box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.767);
+			transform: translate(-0.3rem,-0.3rem);
+			transition: transform 0.4s, border 1s;
+		}
+		```
+
+		Isso indica q na img q passamos o mouse, que está section com class social-media.. Faremos algumas mudanças são elas:
+
+		Borda, Sombra, um transform que consiste em uma movimentação (translaçao) e um delay para o transform e pro border (usando o transition).
+
+	6. Esconder a barra de rolagem:
+
+		Chame a ::webkit-scrollbar e coloque largura e altura no zero.
+
+		```
+		::-webkit-scrollbar { /*Esconder a barra de rolagem*/
+            width: 0rem;
+            height: 0rem;
+        }
+		```
+
+	7. @charset "UTF-8";:
+
+		O atributo charset especifica a codificação de caracteres do documento HTML. A especificação HTML5 incentiva os desenvolvedores web a usar o conjunto de caracteres UTF-8, que cobre quase todos os caracteres e símbolos do mundo!
+
+
+
+
+
+

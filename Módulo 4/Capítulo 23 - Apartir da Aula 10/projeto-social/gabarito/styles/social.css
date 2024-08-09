@@ -1,0 +1,33 @@
+@charset "UTF-8";
+:root {
+    font-size: 62.5%;
+}
+*{
+    margin: 0rem;
+    padding: 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar { /*Esconder a barra de rolagem*/
+    width: 0rem;
+    height: 0rem;
+}
+
+img{
+    width: 100vw;
+}
+a {
+    display: block;
+    background-color: darkslategray;
+    color: goldenrod;
+    padding: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: lightslategray;
+    color: gold;
+}

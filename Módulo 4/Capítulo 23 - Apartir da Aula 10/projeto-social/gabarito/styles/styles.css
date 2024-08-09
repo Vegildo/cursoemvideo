@@ -1,0 +1,86 @@
+@charset "UTF-8";
+:root {
+    font-size: 62.5%; /*Transformando 1 rem em 10 px*/
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.6rem;  
+    background-color: darkslategray ;  
+    /* overflow: hidden; */
+}
+::-webkit-scrollbar { /*Esconder a barra de rolagem*/
+    width: 0rem;
+    height: 0rem;
+}
+
+body {
+    background: url('../imagens/fundo-madeira.jpg') no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: beige;
+}
+main {
+    position: relative; /*Para centralizar o container filho*/
+    height: 91vh;
+}
+
+section.cell-phone {
+    position: absolute; /*Para centralizar esse container*/
+    top: 50%; /*Para centralizar verticalmente esse container*/
+    left: 50%; /*Para horizontalmente esse container*/
+    transform: translate(-50%,-50%); /*Para centralizar esse container com centro da imagem de fundo*/
+    background: url("../imagens/frame-iphone.png") no-repeat; /*Escolha de imagem de fundo desse container*/
+    width: 31.1rem; /*Largura da imagem de fundo*/
+    height: 62.7rem;/*Altura da imagem de fundo*/
+    margin: 2rem 0 0 0;
+}
+
+iframe#screen {
+    position: relative;
+    top: 8rem;
+    left: 2.2rem;
+    width: 26.7rem;
+    height: 47.1rem;
+}
+
+section.social-media {
+    text-align: right;
+}
+
+section.social-media > a > img { /*section.social-media img*/
+    width: 5rem;
+    /* height: 5rem; */
+    margin: 1rem;
+    border-radius: 50%;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.400);
+    box-sizing: border-box; /*Transforma a borda em parte do elemento*/
+}
+
+section.social-media img:hover {
+    border: 0.2rem solid rgba(255, 255, 255, 0.507);
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.767);
+    transform: translate(-0.3rem,-0.3rem);
+    transition: transform 0.4s, border 1s;
+}
+
+
+footer {
+    margin: 4rem 0 0 0;
+    width: 100vw;
+    height: 2vh;    
+    background-color: rgba(47, 79, 79, 0.322);
+    text-align: center;
+}
+footer > a {
+    color: gold;
+    text-decoration: none;
+}
+footer > a:hover {
+    text-decoration: underline;
+}
