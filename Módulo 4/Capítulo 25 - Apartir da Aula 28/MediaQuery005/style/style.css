@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* Versão mobile first */
+
+
+:root {
+    font-size: 62.5%; /* Transformando 1rem em 10px */
+}
+
+* {
+    margin: 0rem; /* Retira qualquer margin default da página */
+    padding: 0rem; /* Retira qualquer padding default da página */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    background-color: lightgray; /* Fundo de cor cinza leve no site */
+}
+
+body {
+    font-size: 1.6rem; /* Font size em 16px */
+}
+
+header {
+    background-color: rgb(148,148,148); /* Fundo com cor cinza, no header */
+}
+
+header > h1 {
+    padding: 1rem; /* Espaço em volta do título  */
+    text-align: center; /* Centraliza o título */
+}
+
+span#burguer { /* simbolo do menu */
+    background-color: rgb(48,48,48); 
+    color: white;
+    display: block; /* aparecer 100% da tela lateral */
+    text-align: center; /* centraolizar */
+    padding: 1rem; /* Espaço de padding de 10px */
+    cursor: pointer; /* mudar o simbolo do mouse, quando estier sobre ele, pra maozinha */
+}
+
+span#burguer:hover { /* Simbolo do menu, quando passar o mouse em cima */
+    background-color: white;
+    color: black;
+}
+
+menu {
+    /* display: block; Muda nada visualmente, porém reafirma a vizualização do menu */
+    display: none; /* Para que não aparece, so fique o símbolo */
+}
+
+menu > ul {
+    list-style-type: none; /* Retira as "bolinhas" da ista */
+}
+
+menu > ul > li > a { /* Só funciona se seguir a sequencia de paternidade correta */
+    display: block; /* Zero mudança visual, só para reafirmar que será renderizado */
+    padding: 1rem; /* Espaço em volta do link */
+    text-decoration: none; /* Retira a decoração sublinhada que vem default no link */
+    background-color: rgb(87,87,87);
+    color: white;
+    text-align: center;
+    border-top: 0.2rem solid gray;
+}
+
+menu > ul > li > a:hover { /* O mesmo que o de cima só q quando passar o mouse (hover) */
+    background-color: gray;
+}
+
+main {
+    width: 90vw;
+    background-color: white;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+article > h2 {
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+article > p {
+    text-align: justify;
+    margin-bottom: 2rem;
+    text-indent: 2rem;
+}
+
+
+

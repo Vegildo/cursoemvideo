@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+
+/* Todas as demais mídias */
+
+/* 
+        Typical Device Breakpoints
+
+    Celular Pequeno: Abaixo de 600px
+    Celular Grande: Entre 600px a 768px
+    Tablet: Entre 768px a 992px
+    Desktop: Entre 768px a 1200px
+    Tv: Acima de 1200px
+
+*/
+
+/* h2::before {
+  content: "Versão phone";
+} */
+
+@media print {
+    body {
+        background-image: url(../../images/back-print.jpg); /* Desnecessário pois não existe backgroung-image em print  */
+        font-family: 'Courier New', Courier, monospace;        
+    }
+    main {
+        margin-top: 0.2rem;
+        border: 0.2rem solid black;
+    }
+    main h1 {
+        text-shadow: none;
+        color: black;
+    }
+    img#phone {
+        display: none;
+    }
+    img#print {
+        display: block;
+    }
+    h2:before {
+        content: "Versão Print";
+    }
+    /* h3:before {
+        content: "Desenvolvido por Leonardo Braga";
+    } */
+    main::after {
+        content: "Desenvolvido por Leonardo Braga";
+        color: darkgoldenrod;
+    }   
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    body {
+        background-image: url(../../images/back-tablet.jpg);
+    }
+    img#phone {
+        display: none;
+    }
+    img#tablet {
+        display: block;
+    }
+    h2:before {
+        content: "Versão Tablet";
+    }
+    h3:before {
+        content: "Desenvolvido por Leonardo Braga";
+    }   
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    body {
+        background-image: url(../../images/back-pc.jpg);
+    }
+    img#phone {
+        display: none;
+    }
+    img#pc {
+        display: block;
+    }
+    h2:before {
+        content: "Versão PC";
+    }
+    h3:before {
+        content: "Desenvolvido por Leonardo Braga";
+    }   
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        background-image: url(../../images/back-tv.jpg);
+    }
+    img#phone {
+        display: none;
+    }
+    img#tv {
+        display: block;
+    }
+    h2:before {
+        content: "Versão TV";
+    }
+    h3:before {
+        content: "Desenvolvido por Leonardo Braga";
+    }   
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="images/favicon-vaduz.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media-queries.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <title>Projeto Login</title>
+</head>
+<body>
+
+    <main>
+        <section id="login">
+            <div id="image">
+                <!-- Aqui vai a imagem via CSS -->
+            </div>
+            <div id="form">
+                <h1>Login</h1>
+                <p>Seja bem-vindo(a) novamente. Faa login para acessar sua conta e poder fazer as configurações no seu ambiente.</p>
+                <form action="login.js" method="post">
+                    <div id="field">
+                        <span class="material-symbols-outlined">contact_mail</span>
+                        <input type="email" name="login" id="ilogin">
+                        <label for="ilogin"></label>
+                    </div>
+                    <div id="field">
+                        <span class="material-symbols-outlined">passkey</span>
+                        <input type="password" name="password" id="ipassword">
+                        <label for="ipassword"></label>
+                    </div>
+
+                    <input type="submit" value="Entrar">
+                    <a href="forget.html" class="button">
+                        Esqueci a senha <span class="material-symbols-outlined">mail_lock</span>
+                    </a>
+
+                </form>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

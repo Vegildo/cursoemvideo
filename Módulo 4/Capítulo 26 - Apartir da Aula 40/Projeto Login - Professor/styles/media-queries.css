@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/* Todas as demais mídias */
+
+/* 
+        Typical Device Breakpoints
+
+    Celular Pequeno: Abaixo de 600px
+    Celular Grande: Entre 600px a 768px
+    Tablet: Entre 768px a 992px
+    Desktop: Entre 992px a 1200px
+    Tv: Acima de 1200px
+
+*/
+
+/* Para Tablet: */
+@media screen and (min-width: 770px) and (max-width: 1000px) {
+    body {
+        font-size: 1.6rem;
+        background-image: linear-gradient(to top, var(--secundary-color), var(--primary-color));
+    }
+
+    section#login {
+        width: 85vw;
+        height: 31.5rem;
+    }
+
+    section#login > div#image {
+        float: left; /* ficar do lado esquerdo da section */
+        width: 30%; /* ter 30% da largura da section */
+        height: 100%; /* 100% de altura da section */
+    }
+
+    section#login > div#form {
+        float: right; /* ficar do lado direito da section */
+        width: 70%; /* ter 30% da largura da section */
+        height: 100%; /* 100% de altura da section */
+    }
+
+    div#form > h1 {
+        text-align: justify;
+        font-size: 3.0rem;
+    }    
+
+    div#form > p {
+        font-size: 1.6rem;
+        margin: 1rem 0rem;
+    }
+    
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        font-size: 1.6rem;
+        background-image: linear-gradient(to top, var(--primary-color), var(--secundary-color));
+    }
+
+    section#login {
+        width: 85vw;
+        max-width: 1000px;
+        height: 34.5rem;
+    }
+    
+    section#login > div#image {
+        float: right; /* ficar do lado esquerdo da section */
+        width: 30%; /* ter 30% da largura da section */
+        height: 100%; /* 100% de altura da section */
+    }
+
+    section#login > div#form {
+        float: left; /* ficar do lado esquerdo da section */
+        width: 70%; /* ter 30% da largura da section */
+        height: 100%; /* 100% de altura da section */
+    }
+
+    div#form > h1 {
+        text-align: justify;
+        font-size: 3.5rem;
+    }
+
+    div#form > p {
+        font-size: 2.0rem;
+        margin: 1rem 0rem;
+    }
+}
+
+

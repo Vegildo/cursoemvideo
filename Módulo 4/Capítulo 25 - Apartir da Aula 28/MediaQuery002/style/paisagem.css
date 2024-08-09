@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* Aparelho deitado (landscape) */
+
+
+body {
+    /* background-color: orangered; */
+    background-image: url(../../images/cev-landscape.jpg);
+    background-position: left bottom;
+}
+

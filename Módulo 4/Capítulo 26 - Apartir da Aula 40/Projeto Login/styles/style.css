@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+/* Mobile First */
+
+/* 
+    Palheta de cores:
+
+        Cor Azul-escuro 1: #35428E
+        Cor Azul-escuro 2: #45508D
+        Cor Azul-claro 1: #5BCAE2
+        Cor Azul-claro 2: #36C7CF
+        Cor Azul-claro 3: #40ECF5
+        Cor lilas 1: #6770A6
+        Cor lilas 2: #7A80A4
+        Cor cinza-escuro: #595B66
+        Cor cinza-claro: #676980
+*/
+
+:root {
+    font-size: 62.5%; /* Transformando 1rem em 10px */
+    --blue-color-dark1: #35428E;
+    --blue-color-dark2: #45508D;
+    --blue-color-ligth1: #5BCAE2;
+    --blue-color-ligth2: #36C7CF;
+    --blue-color-ligth3: #40ecf5af;
+    --purple-color1: #6770A6;
+    --purple-color2: #7A80A4;
+    --gray-color-dark: #595B66;
+    --gray-color-ligth: #676980;
+    --gray-color-ligth-transparent: #67698071;
+    --white-color: whitesmoke;
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box; /* O calc do tamanho do elemento leva em consideraão a border (borda) */
+}
+
+html, body {
+    background-color: var(--blue-color-dark1); /* Cor de fundo */
+    height: 100vh; /* na altura toda */
+    width: 100vw; /* na largura toda */
+}
+
+body {
+    font-size: 1.6rem; /* voltando tamanho da letra pra 16px */
+}
+
+main {
+    position: relative; /*  o ponto zero será o canto superior esquerdo, e ele começará a contar a partir dali */
+    height: 100vh; /* main em toda altura da tela */
+    width: 100vw; /* main em toda largura da tela */
+}
+
+main > section#login {
+    position: absolute; /* utiliza o elemnento pai como ref, se o msm for relative */
+    top: 50%; /* na metade da altura */
+    left: 50%; /* na metade da largura */
+    overflow: hidden; /* Escondendo parte do elemento q ultrapassa o pai (nesse caso main) */
+
+    background-color: var(--white-color);
+    height: 55rem;
+    width: 30rem;
+    border-radius: 2rem;
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.445);
+
+    transform: translate(-50%, -50%); /* termina de centralizar em relacao ao elemento pai */
+    transition: width .3s, height 0.3s; /* animação, por meio de um delay pra aumento ou diminuicao da section */
+    transition-timing-function: ease; /* suavizada na animação */
+
+}
+
+section#login > div#image {
+    display: block; /* Necessário para utilizar o float no arquivo de media-queries.css */
+    background: var(--white-color) no-repeat; /* mudando a cor de fundo para uma clara e sem repetição */
+    background-image: url(../images/piramide.jpg); /* imagem de fundo escolhida */
+    background-size: cover; /* imagem reduzida pra cobrir o espaço */
+    background-position: center center; /* mudando o posicionamento da imagem */
+
+    height: 21rem; /* Altura do espao para a imagem */
+}
+
+div#form {
+    display: block; /* Necessário para utilizar o float no arquivo de media-queries.css */
+    padding: 1rem; /* Pequeno espaço em volta do form */
+}
+
+div#form > h1 {
+    text-align: center; /* Centralizar título */
+    margin-bottom: 1.1rem;/* espaço abaixo do título*/
+}
+
+div#form > p {
+    font-size: 1.5rem; /* Diminuir um pouco para compactar o texto melhor */
+    margin-bottom: 1rem;/* espaço abaixo do texto*/
+}
+
+div#field {
+    background-color: var(--blue-color-dark1); /* Cor de fundo da caixa dos inputs */
+    border: 0.2rem solid var(--blue-color-dark1); /* Borda de fundo da caixa dos inputs */
+    display: block; /* Displa em caixa */
+    width: 100%; /* largura de 100% do tamanho do elemento pai, form */
+    height: 4rem; /* altura de 40px */
+    border-radius: 0.9rem; /* bordas arredondadas */
+    margin: .5rem 0rem; /* borda de top e botton de 5px e de left e rigth de 0px */
+}
+
+div#field > span {
+    /* background-color: var(--gray-color-dark);  Utilizado somente para testes*/
+    color: var(--white-color); /* cor dos simbolos */
+    font-size: 3rem; /* tamanho deles */
+    width: 3.6rem; /* largura da caixa span */
+    padding: .3rem; /* Espaço externo da caixa span */
+    transform: translateX(0.6rem);
+}
+
+/* Como utilizaremos a func calc() e com porcentagem. Ela calculará o tamanho tanto pra mobile como outras miídias */
+
+
+div#field > input {
+    font-size: 1.6rem; /* Tamanho da letra na caixa */
+    background-color: var(--gray-color-ligth-transparent); /* fundo do input */
+    
+    /* Calcular o width */
+    width: calc(100% - 5rem); /* Com calc podemos calcular o max de tela menos um fvalor fixo, formatando para cada tamanho de tela um tamanho de input diferente. Tornando-o responsivo */
+    height: 100%; /* altura da caixa inteira */
+    padding: 1rem; /* pequeno espaço externo */
+
+    border: 0rem; /* Borda com tamanho nulo */
+    border-radius: 0.9rem; /* borda arredondada */
+
+    translate: 1.1rem -0.9rem; /* centralizando com a caixa pai */
+    
+}
+
+div#field > input:focus-within { /* Quando tiver digitando nele, ou seja, quando ganha foco */
+    background-color: var(--purple-color2);
+    border: none;
+}
+
+form > input[type=submit] {
+    display: block;
+    font-size: 2rem;
+    width: 100%;
+    height: 4rem;
+    margin-top: 2rem;
+    
+    background-color: var(--blue-color-dark1);
+    color: var(--white-color);
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+}
+
+form > input[type=submit]:hover {
+    background-color: var(--blue-color-dark2);
+}
+
+form > a.button {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    height: 4rem;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+
+    background-color: var(--white-color);
+    color: var(--blue-color-dark1);
+
+    border: 0.1rem solid var(--blue-color-dark1);
+    border-radius: 0.9rem;
+    text-decoration: none;
+}
+
+form > a.button:hover {
+    background-color: var(--blue-color-dark1);
+    color: var(--white-color);
+    border: 0.1rem solid var(--white-color);
+
+}
+
+a.button > span {
+    font-size: 1.7rem;
+    transform: translateY(0.3rem);
+}
+/*  */
+
+
+
+
+
+
+
+
+
+

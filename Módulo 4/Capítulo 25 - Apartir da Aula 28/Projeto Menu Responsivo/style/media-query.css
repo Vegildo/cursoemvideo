@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+
+/* Todas as demais mídias */
+
+/* 
+        Typical Device Breakpoints for M3C
+
+    Celular Pequeno: Abaixo de 600px
+    Celular Grande: Entre 600px a 768px
+    Tablet: Entre 768px a 992px
+    Desktop: Entre 992px a 1200px
+    Tv: Acima de 1200px
+
+*/
+
+/* 
+    Como fiemos a tela principal para mobile.
+    Mobile first
+*/
+@media screen and (min-width: 800px) {
+    span#burguer {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav > ul > li {
+        display: inline-block; /* cria um do lado do outro */
+        width: 15vw;
+    }
+    
+}
+
+@media screen and (min-width: 1090px) {
+    nav > ul > li {
+        max-width: 16.35rem;
+    }
+
+    main {
+        width: 92.65rem;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários Continuação</title>
+</head>
+<body>
+    <h1>Mais um Exemplo de Formulários</h1>
+    <form action="cadastro.js" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Sexo</legend>
+
+            <input type="radio" name="sex" id="imasc" value="M" checked>
+            <label for="imasc">Masculino</label> 
+
+            <br>
+
+            <input type="radio" name="sex" id="ifem" value="F">
+            <label for="ifem">Feminino</label>
+
+            <!-- Importante: É obritatório os dois inputs terem o mesmo valor no atributo name-->
+
+        </fieldset>
+        <fieldset>
+            <legend>Esportes Favoritos:</legend>
+
+            <input type="checkbox" name="baska" id="ibaska" checked> <label for="ibaska">Basquete</label> <br>
+            <input type="checkbox" name="fut" id="ifut" checked> <label for="ifut">Futebol</label> <br>
+            <input type="checkbox" name="nat" id="inat"> <label for="inat">Natação</label> <br>
+            <input type="checkbox" name="ten" id="iten"> <label for="iten">Tênis</label><br>
+
+        </fieldset>
+            <div>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </div>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/* Estilo para todos */
+
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: whitesmoke;
+}
+
+header {
+    /* background-color: #2F4F4F; */
+    background-color: #567879;
+}
+
+header > h1 {
+    padding: 1rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
+span#burguer { /* simbolo do menu */
+    color: white;
+    display: block; /* aparecer 100% da tela lateral */
+    text-align: center; /* centraolizar */
+    padding: 1rem; /* Espaço de padding de 10px */
+    cursor: pointer; /* mudar o simbolo do mouse, quando estier sobre ele, pra maozinha */
+}
+
+span#burguer:hover { /* Simbolo do menu, quando passar o mouse em cima */
+    background-color: #A9C0C0;
+    color: black;
+}
+
+nav {
+    display: block;
+}
+
+nav > ul {
+    list-style-type: none;
+}
+
+nav > ul > li > a {
+    color: whitesmoke;
+    background-color: #2F4F4F;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+    border-top: 0.2rem solid #A9C0C0;
+
+}
+
+nav > ul > li > a:hover {    
+    background-color: #A9C0C0;
+} 
+
+nav > li > a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+main {
+    background-color: white;
+    width: 85vw;
+    display: block;
+    margin: 1rem auto;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+article > h2 {
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+article > p {
+    padding-top: 1rem;
+}
+
+article > p > span {
+    font-weight: bold;
+}
+
+
+
+
+
+

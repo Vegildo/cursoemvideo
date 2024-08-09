@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários Outnput</title>
+</head>
+<body>
+    <h1>Formulários Output</h1>
+    <form action="cadastro.js" method="post">
+        <div>
+            <label for="inum">Número: </label>
+            <br>
+            <input type="range" id="inum" name="num" min="0" max="10" value="5"  required oninput="ival.innerHTML = Number(inum.value)">
+            <br>
+            <output name="val" id="ival">0</output>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+    </form>
+    
+</body>
+</html>

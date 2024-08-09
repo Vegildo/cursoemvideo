@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários Sem Input</title>
+</head>
+<body>
+    <h1>Formulários Sem Input</h1>
+    <form action="cadastro.js" method="post">
+        <div>
+            <label for="istate">Estado: </label>
+            <select name="state" id="istate">
+                <option value="" selected>--------- Escolha ---------</option>
+                <optgroup label="Região Sudeste">
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="ES">Espírito Santo</option>
+                </optgroup>
+                <optgroup label="Região Sul">
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="PR">Paraná</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <label for="iprof">Profissão: </label>
+            <input type="text" name="prof" id="iprof" list="list-prof">
+            <datalist id="list-prof">
+                <optgroup label="Profissão">
+                    <option value="DEV">Desenvolvedor</option>
+                    <option value="ENG-ELE">Engenheiro Eletricista</option>
+                    <option value="PSIC">Psicólogo</option>
+                    <option>Professor</option> <!-- Sem o value o próprio nome será a reposta enviada na request  -->    
+                </optgroup>
+                <optgroup label="Trabalho">
+                    <option value="PEDR">Pedreiro</option>
+                    <option value="DCASA">Dona de Casa</option>
+                </optgroup>
+            </datalist>
+        </div>
+        <div>
+            <label for="imsg">Mensagem: </label>
+            <br>
+            <textarea name="msg" id="imsg" cols="30" rows="10" placeholder="Sua mensagem aqui..."></textarea>
+        <!-- Usando textarea colocamos, geralmente, o formulário com método post, pois o get tem limitação de tamanho de dados (3000 bytes). -->
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+    </form>
+    
+</body>
+</html>

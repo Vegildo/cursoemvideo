@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+
+/* Versao Mobile First */
+
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; /* Para incluir a borda no calculo do tamanho, muito utilizado em mobile first */
+    
+}
+
+
+html, body {
+    width: 100vw; /* 100% da largura de tela */
+    height: 100vh; /* 100% da altura de tela */
+
+}
+
+body {
+    font-size: 1.6rem;
+    background: black url(../../images/back-phone.jpg) center center / cover;
+    /* background-size: cover;
+    background-position: center center; */
+
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.842);
+    width: 90%;
+    margin: 0rem auto;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.493);
+}
+
+img {
+    display: block;
+    margin: 0rem auto;
+}
+
+img#print, img#tablet, img#tv ,img#pc {
+    display: none;
+} 
+
+h2::before {
+    content: "Versão phone";
+}
+

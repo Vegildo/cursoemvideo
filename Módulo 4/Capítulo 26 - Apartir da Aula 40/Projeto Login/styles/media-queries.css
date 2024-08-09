@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/* Todas as demais mídias */
+
+/* 
+        Typical Device Breakpoints
+
+    Celular Pequeno: Abaixo de 600px
+    Celular Grande: Entre 600px a 768px
+    Tablet: Entre 768px a 992px
+    Desktop: Entre 992px a 1200px
+    Tv: Acima de 1200px
+
+*/
+
+/* Para Tablet: */
+@media screen and (min-width: 770px) and (max-width: 1000px) {
+    body {
+        font-size: 1.6rem;
+        background-image: linear-gradient(to top, var(--blue-color-ligth1), var(--blue-color-dark1));
+    }
+
+    main > section#login {
+        width: 90vw;
+        height: 41rem;
+    }
+
+    section#login > div#image {
+        float: right; /* ficar do lado direito da section */
+        width: 35%;
+        height: 100%;
+    }
+
+    section#login > div#form {
+        float: left;/* ficar do lado esquerdo da section */
+        width: 65%;
+        height: 100%;
+    }
+
+    form > input[type=submit] {
+        margin-top: 3rem;
+    }
+
+    div#form > h1 {
+        font-weight: bold;
+        font-size: 3.2rem;
+    }
+    
+    div#form > p {
+        font-size: 2.0rem;
+        margin: 2rem 0rem;
+    }
+
+    form > input[type=submit] {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    body {
+        font-size: 1.6rem;
+        background-image: linear-gradient(to top, var(--blue-color-dark1), var(--blue-color-ligth1));        
+    }
+
+    main > section#login {
+        width: 90vw;
+        max-width: 120rem;
+        height: 50rem;
+    }
+
+    section#login > div#image {
+        float: left; /* ficar do lado esquerdo da section */
+        width: 35%;
+        height: 100%;
+    }
+
+    section#login > div#form {
+        float: right; /* ficar do lado direito da section */
+        width: 65%;
+        height: 100%;
+    }
+
+    div#form > h1 {
+        font-weight: bold;
+        font-size: 3.8rem;
+    }
+
+    div#form > p {
+        font-size: 2.8rem;
+        margin: 3rem 0rem;
+    }
+
+    form > input[type=submit] {
+        margin-top: 5rem;
+    }
+    
+}
+
+

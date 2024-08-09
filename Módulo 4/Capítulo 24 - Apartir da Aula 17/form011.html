@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-vaduz.png" type="image/x-icon">
+    <title>Formulário Leonardo Braga</title>
+</head>
+<body>
+    <h1>Formulário de Produtos</h1>
+
+    <form action="cadastro.js" method="post" oninput="itot.value = Number(iprec.value) * Number(iquant.value)">
+        <div>
+            <label for="iprod">Produto: </label>
+            <input type="text" name="prod" id="iprod">
+        </div>
+        <br>
+        <div>
+            <label for="iprec">Preço: R$</label>
+            <input type="number" name="prec" id="iprec" step="0.01">
+        </div>
+        <br>
+        <div>
+            <label for="iquant">Quantidade</label>
+            <input type="number" name="quant" id="iquant" step="1">
+        </div>
+        <br>
+        <div>
+            <label for="itot">Total: R$</label>
+            <output name="tot" id="itot">0</output>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+    
+</body>
+</html>
